@@ -1,14 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPC5g Test</title>
-    <link rel="stylesheet" href="style.css" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="script.js"></script>
-    
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PPC 5G</title>
+        <link rel="icon" type="image/x-icon" href="images/ppclogo.png">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/swiper-bundle.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-side-modals.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+       <!-- Google Tag Manager -->
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N79T3LBF"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N79T3LBF');</script>
+    <!-- End Google Tag Manager -->
+    <style>@import url(https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap);</style><style>broken-link-checker-el {
+      font-family: 'Dancing Script', cursive;
+      font-family: 'Roboto', sans-serif;
+    }
+    broken-link-checker-el .btn {
+      cursor: pointer;
+      background-color: #88c45b;
+      border: none;
+      padding: 5px 10px;
+      line-height: 12px;
+      border-radius: 4px;
+      color: white;
+      font-size: 13px!important;
+      height: -moz-fit-content;
+      height: fit-content;
+      font-weight: 500;
+      min-height: 26px;
+    }
+    broken-link-checker-el .btn:hover {
+      background-color: #73b541;
+    }
+    broken-link-checker-el .shareOptions {
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 10px 10px 0 10px;
+      border-top: 1px solid #e9e9e9;
+    }
+    broken-link-checker-el .shareOptions a {
+      cursor: pointer;
+    }
+    broken-link-checker-el .shareOptions a.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.42;
+    }
+    broken-link-checker-el .shareOptions .options {
+      display: flex;
+      gap: 8px;
+    }
+    broken-link-checker-el .broken-alert-status {
+      text-align: center;
+      font-size: 13px;
+      color: white;
+    }
+    broken-link-checker-el .broken-alert-status.success {
+      background-color: green;
+    }
+    broken-link-checker-el .broken-alert-status.fail {
+      background-color: #ce3434;
+    }
+    .atom_link {
+      background: rgba(0, 0, 0, 0.1) !important;
+      color: #fff !important;
+      /*font-weight: bold;
+      border-right: 1px solid #fff;*/
+    }
+    .atom_broken {
+      background: #ff4081 !important;
+      color: #fff !important;
+      padding: 1px;
+    }
+    .atom_valid {
+      background: #8bc34a !important;
+      color: #fff !important;
+    }
+    .atom_response {
+      color: #fff;
+      border-left: 1px solid #fff;
+      padding: 0px 5px;
+      margin: 0px 0px 0px 5px;
+    }
+    .atomseo-brokenlink-checker .hidden {
+      display: none !important;
+      visibility: hidden;
+    }
+    .atomseo-brokenlink-checker {
+      background: #fff;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      width: 320px;
+      z-index: 99999999;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    }
+    .atomseo-brokenlink-checker .header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 10px 0 10px 5px;
+      position: relative;
+      text-transform: uppercase;
+      height: auto;
+      font-size: 15px;
+      display: flex;
+    }
+    .atomseo-brokenlink-checker .header img {
+      margin-right: 10px;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      filter: none;
+    }
+    .header .close {
+      background: rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      font-style: normal;
+      height: 16px;
+      line-height: 16px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      width: 16px;
+      text-align: center;
+      font-size: 18px;
+      transform: translateY(-50%);
+    }
+    .atomseo-brokenlink-checker .dashboard {
+      text-align: center;
+    }
+    .dashboard .dashboard-top {
+      background: rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+    .dashboard .dashboard-count,
+    .dashboard .dashboard-t {
+      padding: 2px 0;
+    }
+    .dashboard .dashboard-count {
+      color: #333;
+      font-size: 24px;
+    }
+    .dashboard .dashboard-t {
+      color: #666;
+      font-size: 14px;
+    }
+    .dashboard .col {
+      float: left;
+      padding: 15px 0;
+      width: 50%;
+    }
+    .dashboard .dashboard-bot {
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    .dashboard .dashboard-bot::after {
+      background: rgba(0, 0, 0, 0.1);
+      bottom: 10px;
+      content: '';
+      left: 50%;
+      position: absolute;
+      top: 10px;
+      width: 1px;
+    }
+    .dashboard-bot .dashboard-count,
+    .dashboard-bot .dashboard-t {
+      color: #ff4081;
+    }
+    .__success .dashboard-bot .dashboard-count,
+    .__success .dashboard-bot .dashboard-t {
+      color: #8bc34a;
+    }
+    .atomseo-brokenlink-checker .links {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 20px 20px 25px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .links ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .links li {
+      color: #ff4081;
+      font-size: 13px;
+      margin: 2px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .links a {
+      color: #ff4081;
+      cursor: pointer;
+    }
+    .links .more {
+      color: #8bc34a;
+      display: inline-block;
+      font-size: 13px;
+      margin: 20px 0 0;
+      cursor: pointer;
+    }
+    .atomseo-brokenlink-checker .check {
+      background: #8bc34a;
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      height: 36px;
+      line-height: 36px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .atomseo-brokenlink-checker .check a {
+      color: #fff;
+    }
+    .atomseo-brokenlink-checker .poweredby {
+      text-align: center;
+      font-size: 10px;
+    }
+    .atomseo-brokenlink-checker #loadingProgressG {
+      width: 298px;
+      height: 6px;
+      overflow: hidden;
+      background-color: #3f51b5;
+      margin: auto;
+      /*border-radius:3px;
+          -o-border-radius:3px;
+          -ms-border-radius:3px;
+          -webkit-border-radius:3px;
+          -moz-border-radius:3px;*/
+    }
+    .atomseo-brokenlink-checker .loadingProgressG {
+      background-color: #ffffff;
+      margin-top: 0;
+      margin-left: -300px;
+      animation-name: bounce_loadingProgressG;
+      -o-animation-name: bounce_loadingProgressG;
+      -ms-animation-name: bounce_loadingProgressG;
+      -webkit-animation-name: bounce_loadingProgressG;
+      -moz-animation-name: bounce_loadingProgressG;
+      animation-duration: 1.89s;
+      -o-animation-duration: 1.89s;
+      -ms-animation-duration: 1.89s;
+      -webkit-animation-duration: 1.89s;
+      -moz-animation-duration: 1.89s;
+      animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      -o-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-timing-function: linear;
+      width: 300px;
+      height: 6px;
+    }
+    @keyframes bounce_loadingProgressG {
+      0% {
+        margin-left: -300px;
+      }
+      100% {
+        margin-left: 300px;
+      }
+    }
+    .atomseo-brokenlink-scroll-into-view {
+      width: 18px;
+      height: 18px;
+      vertical-align: bottom;
+    }
+    </style></head>
 <body data-new-gr-c-s-check-loaded="14.1136.0" data-gr-ext-installed="" style="overflow: auto;">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N79T3LBF"
@@ -4429,7 +4705,16 @@
                 </div>
             </div>
         </div>    
-       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="js/jquery.serialscrolling.js"></script>
+        <script src="js/swiper-bundle.min.js"></script>
+        <script src="js/jquery.ttpanel.js"></script>
+        <script src="js/javascript.js"></script>      
+        <script src="js/main.js"></script> 
+        <script src="js/swiperjs.js"></script>
         
     
        
