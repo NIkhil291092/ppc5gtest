@@ -12,9 +12,8 @@ $(document).ready(function(){
        
 
     })
-    $('a[href="#bookaduit"]').click(function(){
-        $('.modal-content').css("animation","0.5s ease-in 0s 1 normal none running slideleft")
-        $('#modalContainer').css("display","block");
+    $('.menudropdown').click(function(){
+        $('.submenu.open1').toggle();
     })
 })
 
